@@ -27,8 +27,8 @@ from app.utils import jsonify
 
 __version__ = '0.6.0'
 
-__title__ = 'todomvc-api'
-__package_name__ = 'todomvc-api'
+__title__ = 'TodoMVC-Flask-API'
+__package_name__ = 'todomvc-flask-api'
 __author__ = 'Reuben Cummings'
 __description__ = 'A TodoMVC API backend'
 __email__ = 'reubano@gmail.com'
