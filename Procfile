@@ -1,1 +1,1 @@
-web: gunicorn todo:app --log-file -
+web: gunicorn app:create_app\(\'Production\'\) -w 3 -k gevent
