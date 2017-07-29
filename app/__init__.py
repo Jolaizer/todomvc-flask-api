@@ -25,7 +25,7 @@ from flask_restless import APIManager
 
 from app.utils import jsonify
 
-__version__ = '0.6.0'
+__version__ = '0.6.1'
 
 __title__ = 'TodoMVC-Flask-API'
 __package_name__ = 'todomvc-flask-api'

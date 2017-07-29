@@ -1,5 +1,5 @@
 todomvc-flask-api |travis|
-===========================
+==========================
 
 .. |travis| image:: https://img.shields.io/travis/reubano/todomvc-flask-api/master.svg
     :target: https://travis-ci.org/reubano/todomvc-flask-api
@@ -7,7 +7,7 @@ todomvc-flask-api |travis|
 Introduction
 ------------
 
-`TodoMVC-Flask-API <http://todomvc-flask-api.herokuapp.com>`_ is a `Flask <http://flask.pocoo.org>`_ (`About Flask`_) powered `TodoMVC RESTful API backend <http://todobackend.com>` written in Python.
+`TodoMVC-Flask-API <http://todomvc-flask-api.herokuapp.com>`_ is a `Flask <http://flask.pocoo.org>`_ (`About Flask`_) powered `TodoMVC RESTful API backend <http://todobackend.com>`_ written in Python.
 
 Requirements
 ------------
