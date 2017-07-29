@@ -1,0 +1,50 @@
+sudo: false
+language: python
+matrix:
+  include:
+  - python: 3.6
+  - python: pypy3
+    before_install:
+    - |
+        # https://github.com/pyenv/pyenv/tree/master/plugins/python-build/share/python-build
+        export PYPY_BUILD="pypy3.3-5.5-alpha"
+        export PYPY_EXEC="pypy3-v5.5.0"
+
+        if [ -f "$PYENV_ROOT/bin/pyenv" ]; then
+          pushd "$PYENV_ROOT" && git pull && popd
+        else
+          rm -rf "$PYENV_ROOT" && git clone --depth 1 "$PYPY_GIT" "$PYENV_ROOT"
+        fi
+
+        export PYENV_VERSION="$PYPY_BUILD"
+        git clone "$PYENV_VENV_GIT" "$PYENV_ROOT"/plugins/pyenv-virtualenv
+        eval "$(pyenv init -)"
+        pyenv deactivate
+        pyenv install --skip-existing "$PYENV_VERSION"
+        pyenv global "$PYENV_VERSION"
+        pyenv virtualenv "$PYENV_VERSION" "$PYPY_EXEC"
+        pyenv activate "$PYPY_EXEC"
+        python --version
+        curl https://bootstrap.pypa.io/get-pip.py | python
+        pip --version
+
+cache:
+  directories:
+    - ~/.cache/pip
+
+notifications:
+  email:
+    on_success: always
+
+branches:
+  except:
+    - /^v[0-9]/
+
+install:
+  - pip install -U pip
+  - pip install wheel
+  - pip install -r dev-requirements.txt
+  - pip install -r requirements.txt
+
+script:
+  - manage lint && manage test
