@@ -47,4 +47,3 @@ def test_entries_get_created_unfinished(client):
     todo = client.query()
     assert todo.title == title
     assert not todo.completed
-
