@@ -2,7 +2,7 @@ todomvc-flask-api |travis|
 ==========================
 
 .. |travis| image:: https://img.shields.io/travis/reubano/todomvc-flask-api/master.svg
-    :target: https://travis-ci.org/reubano/todomvc-flask-api
+  :target: https://travis-ci.org/reubano/todomvc-flask-api
 
 Introduction
 ------------
@@ -46,7 +46,7 @@ Check that the correct version of Python is installed
 
 .. code-block:: bash
 
-    python -V
+  python -V
 
 Activate your `virtualenv <http://docs.python-guide.org/en/latest/dev/virtualenvs/#virtualenvironments-ref>`_
 
@@ -57,20 +57,20 @@ Installation
 
 .. code-block:: bash
 
-    git clone git@github.com:reubano/todomvc-flask-api.git
+  git clone git@github.com:reubano/todomvc-flask-api.git
 
 *Install requirements*
 
 .. code-block:: bash
 
-    cd todomvc-flask-api
-    pip install -r base-requirements.txt
+  cd todomvc-flask-api
+  pip install -r base-requirements.txt
 
 *Run API server*
 
 .. code-block:: bash
 
-    manage serve
+  manage serve
 
 Now *view the API documentation* at ``http://localhost:5000``
 
@@ -85,7 +85,7 @@ Usage
 
 .. code-block:: bash
 
-    manage <command> [command-options] [manager-options]
+  manage <command> [command-options] [manager-options]
 
 Examples
 ^^^^^^^^
@@ -94,56 +94,58 @@ Examples
 
 .. code-block:: bash
 
-    manage serve
+  manage serve
 
 *Run tests*
 
 .. code-block:: bash
 
-    manage test
+  manage test
 
 *Run linters*
 
 .. code-block:: bash
 
-    manage lint
+  manage lint
 
 *Initialize the dev database*
 
 .. code-block:: bash
 
-    manage initdb
+  manage initdb
 
 *Populate the production database*
 
 .. code-block:: bash
 
-    manage popdb -m Production
+  manage popdb -m Production
 
 Manager options
 ^^^^^^^^^^^^^^^
 
-      -m MODE, --cfgmode=MODE  set the configuration mode, must be one of
-                               ['Production', 'Development', 'Test'] defaults
-                               to 'Development'. See `config.py` for details
-      -f FILE, --cfgfile=FILE  set the configuration file (absolute path)
+  -m MODE, --cfgmode=MODE  set the configuration mode, must be one of
+               ['Production', 'Development', 'Test'] defaults
+               to 'Development'. See `config.py` for details
+  -f FILE, --cfgfile=FILE  set the configuration file (absolute path)
 
 Commands
 ^^^^^^^^
 
-    runserver           Runs the flask development server
-    serve               Runs the flask development server
-    check               Check staged changes for lint errors
-    lint                Check style with linters
-    test                Run nose, tox, and script tests
-    createdb            Creates database if it doesn't already exist
-    cleardb             Removes all content from database
-    initdb              Removes all content from database and creates new
-                        tables
-    popdb               Populates the database with sample data
-    add_keys            Add SSH keys to heroku
-    deploy              Deploy app to heroku
-    shell               Runs a Python shell inside Flask application context.
+.. code-block:: bash
+
+  runserver           Runs the flask development server
+  serve               Runs the flask development server
+  check               Check staged changes for lint errors
+  lint                Check style with linters
+  test                Run nose, tox, and script tests
+  createdb            Creates database if it doesn't already exist
+  cleardb             Removes all content from database
+  initdb              Removes all content from database and creates new
+                      tables
+  popdb               Populates the database with sample data
+  add_keys            Add SSH keys to heroku
+  deploy              Deploy app to heroku
+  shell               Runs a Python shell inside Flask application context.
 
 Command options
 ^^^^^^^^^^^^^^^
@@ -152,19 +154,21 @@ Type ``manage <command> --help`` to view any command's options
 
 .. code-block:: bash
 
-    manage serve --help
+  manage serve --help
 
 Output
 
-    usage: manage serve [-?] [-t] [-T TIMEOUT] [-l] [-o] [-p PORT] [-h HOST]
+.. code-block:: bash
 
-    Runs the flask development server
+  usage: manage serve [-?] [-t] [-T TIMEOUT] [-l] [-o] [-p PORT] [-h HOST]
 
-    optional arguments:
-      -?, --help            show this help message and exit
-      -t, --threaded        Run multiple threads
-      -p PORT, --port PORT  The server port
-      -h HOST, --host HOST  The server host
+  Runs the flask development server
+
+  optional arguments:
+  -?, --help            show this help message and exit
+  -t, --threaded        Run multiple threads
+  -p PORT, --port PORT  The server port
+  -h HOST, --host HOST  The server host
 
 Example
 ^^^^^^^
@@ -173,7 +177,7 @@ Example
 
 .. code-block:: bash
 
-    manage serve -p 1000 -m Production
+  manage serve -p 1000 -m Production
 
 Configuration
 -------------
@@ -204,7 +208,7 @@ To set this environment variable, *do the following*:
 
 .. code-block:: bash
 
-    echo 'export SECRET_KEY=value' >> ~/.profile
+  echo 'export SECRET_KEY=value' >> ~/.profile
 
 Documentation
 -------------
@@ -226,19 +230,19 @@ To use ``gevent``, you first need to install ``libevent``.
 
 .. code-block:: bash
 
-    apt-get install libevent-dev
+  apt-get install libevent-dev
 
 *Mac OS X via* `homebrew <http://mxcl.github.com/homebrew/>`_
 
 .. code-block:: bash
 
-    brew install libevent
+  brew install libevent
 
 *Mac OS X via* `macports <http://www.macports.com/>`_
 
 .. code-block:: bash
 
-    sudo port install libevent
+  sudo port install libevent
 
 *Mac OS X via DMG*
 
@@ -252,14 +256,14 @@ Now that libevent is handy, *install the remaining requirements*
 
 .. code-block:: bash
 
-    sudo pip install -r requirements.txt
+  sudo pip install -r requirements.txt
 
 Or via the following if you installed libevent from macports
 
 .. code-block:: bash
 
-    sudo CFLAGS="-I /opt/local/include -L /opt/local/lib" pip install gevent
-    sudo pip install -r requirements.txt
+  sudo CFLAGS="-I /opt/local/include -L /opt/local/lib" pip install gevent
+  sudo pip install -r requirements.txt
 
 Foreman
 ~~~~~~~
@@ -268,19 +272,19 @@ Finally, *install foreman*
 
 .. code-block:: bash
 
-    sudo gem install foreman
+  sudo gem install foreman
 
 Now, you can *run the application* locally
 
 .. code-block:: bash
 
-    foreman start
+  foreman start
 
 You can also *specify what port you'd prefer to use*
 
 .. code-block:: bash
 
-    foreman start -p 5555
+  foreman start -p 5555
 
 Deployment
 ^^^^^^^^^^
@@ -294,35 +298,35 @@ Heroku <http://devcenter.heroku.com/articles/quickstart>`_, and also
 
 .. code-block:: bash
 
-    sudo gem install heroku
-    heroku create -s cedar app_name
+  sudo gem install heroku
+  heroku create -s cedar app_name
 
 *Add the database*
 
 .. code-block:: bash
 
-    heroku addons:add heroku-postgresql:dev
-    heroku pg:promote HEROKU_POSTGRESQL_COLOR
+  heroku addons:add heroku-postgresql:dev
+  heroku pg:promote HEROKU_POSTGRESQL_COLOR
 
 *Push to Heroku and initialize the database*
 
 .. code-block:: bash
 
-    git push heroku master
-    heroku run python manage.py createdb -m Production
+  git push heroku master
+  heroku run python manage.py createdb -m Production
 
 *Start the web instance and make sure the application is up and running*
 
 .. code-block:: bash
 
-    heroku ps:scale web=1
-    heroku ps
+  heroku ps:scale web=1
+  heroku ps
 
 Now, we can *view the application in our web browser*
 
 .. code-block:: bash
 
-    heroku open
+  heroku open
 
 And anytime you want to redeploy, it's as simple as ``git push heroku master``.
 Once you are done coding, deactivate your virtualenv with ``deactivate``.
@@ -332,38 +336,38 @@ Directory Structure
 
 .. code-block:: bash
 
-    tree . | sed 's/+----/├──/' | sed '/.pyc/d' | sed '/.DS_Store/d'
-    .
-    ├── LICENSE
-    ├── MANIFEST.in
-    ├── Procfile
-    ├── README.rst
-    ├── app
-    │   ├── __init__.py
-    │   ├── models.py
-    │   ├── order.py
-    │   └── utils.py
-    ├── app.db
-    ├── base-requirements.txt
-    ├── config.py
-    ├── dev-requirements.txt
-    ├── helpers
-    │   ├── check-stage
-    │   ├── clean
-    │   ├── pippy
-    │   ├── srcdist
-    │   └── wheel
-    ├── manage.py
-    ├── requirements.txt
-    ├── runtime.txt
-    ├── setup.cfg
-    ├── setup.py
-    ├── tests
-    │   ├── standard.rc
-    │   ├── test.sh
-    │   ├── test_endpoints.py
-    │   └── test_models.py
-    └── tox.ini
+  tree . | sed 's/+----/├──/' | sed '/.pyc/d' | sed '/.DS_Store/d'
+  .
+  ├── LICENSE
+  ├── MANIFEST.in
+  ├── Procfile
+  ├── README.rst
+  ├── app
+  │   ├── __init__.py
+  │   ├── models.py
+  │   ├── order.py
+  │   └── utils.py
+  ├── app.db
+  ├── base-requirements.txt
+  ├── config.py
+  ├── dev-requirements.txt
+  ├── helpers
+  │   ├── check-stage
+  │   ├── clean
+  │   ├── pippy
+  │   ├── srcdist
+  │   └── wheel
+  ├── manage.py
+  ├── requirements.txt
+  ├── runtime.txt
+  ├── setup.cfg
+  ├── setup.py
+  ├── tests
+  │   ├── standard.rc
+  │   ├── test.sh
+  │   ├── test_endpoints.py
+  │   └── test_models.py
+  └── tox.ini
 
 Contributing
 ------------
@@ -397,11 +401,11 @@ Contributors
 
 .. code-block:: bash
 
-    $ git shortlog -sn
-        89  Faerbit
-        48  requires.io
-        17  Fabian
-         6  Reuben Cummings
+  $ git shortlog -sn
+    89  Faerbit
+    48  requires.io
+    17  Fabian
+     6  Reuben Cummings
 
 About Flask
 -----------
