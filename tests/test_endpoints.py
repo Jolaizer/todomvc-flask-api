@@ -7,7 +7,12 @@
     Provides unit tests for the API enpoints.
 """
 from json import loads, dumps
-from json.decoder import JSONDecodeError
+
+try:
+    from json.decoder import JSONDecodeError
+except ImportError:
+    JSONDecodeError = ValueError
+
 from functools import partial
 
 import pytest
