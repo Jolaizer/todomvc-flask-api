@@ -131,19 +131,19 @@ Manager options
 Commands
 ^^^^^^^^
 
-    runserver           Runs the flask development server
-    serve               Runs the flask development server
-    check               Check staged changes for lint errors
-    lint                Check style with linters
-    test                Run nose, tox, and script tests
-    createdb            Creates database if it doesn't already exist
-    cleardb             Removes all content from database
-    initdb              Removes all content from database and creates new
-                        tables
-    popdb               Populates the database with sample data
-    add_keys            Add SSH keys to heroku
-    deploy              Deploy app to heroku
-    shell               Runs a Python shell inside Flask application context.
+      runserver           Runs the flask development server
+      serve               Runs the flask development server
+      check               Check staged changes for lint errors
+      lint                Check style with linters
+      test                Run nose, tox, and script tests
+      createdb            Creates database if it doesn't already exist
+      cleardb             Removes all content from database
+      initdb              Removes all content from database and creates new
+                          tables
+      popdb               Populates the database with sample data
+      add_keys            Add SSH keys to heroku
+      deploy              Deploy app to heroku
+      shell               Runs a Python shell inside Flask application context.
 
 Command options
 ^^^^^^^^^^^^^^^
