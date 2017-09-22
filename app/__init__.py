@@ -46,7 +46,6 @@ compress = Compress()
 
 def create_app(config_mode=None, config_file=None):
     app = Flask(__name__)
-    # app.register_blueprint(blueprint)
     CORS(app, resources=r'/*', allow_headers='Content-Type')
     compress.init_app(app)
     cache_config = {}
