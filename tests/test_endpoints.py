@@ -33,7 +33,7 @@ def get_data(response):
     raw = response.get_data(as_text=True)
     mimetype = response.headers.get('mimetype', '')
     content_type = response.headers.get('content-type', '')
-    is_json = 'json' in mimetype or content_type
+    is_json = ('json' in mimetype) or ('json' in content_type)
 
     try:
         data = loads(raw) if is_json else raw

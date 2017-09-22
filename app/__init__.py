@@ -25,7 +25,7 @@ from flask_restless import APIManager
 
 from app.utils import jsonify
 
-__version__ = '0.6.2'
+__version__ = '0.6.3'
 
 __title__ = 'TodoMVC-Flask-API'
 __package_name__ = 'todomvc-flask-api'
@@ -46,7 +46,6 @@ compress = Compress()
 
 def create_app(config_mode=None, config_file=None):
     app = Flask(__name__)
-    # app.register_blueprint(blueprint)
     CORS(app, resources=r'/*', allow_headers='Content-Type')
     compress.init_app(app)
     cache_config = {}
